@@ -1,16 +1,14 @@
 # SwiftAsyncAwait
 
-Let's say that this is the school project because I have no idea about GCD and async/await machanism.
-It's just test implementation and some idea of the async/await in Swift.
+It's just test implementation and some idea of the async/await mechanism in Swift.
 This code is not tested in the real apps. If you want to use this code it's on your own risk yet. 
 We will try make much better approach to async/await in the future if it's possible :-D. 
 
 ## Benchmark
 Based on benchmark tests this library has pretty good performance. We comapred this library to GCD.
 There were 10000 tests performed. As well as, th **SwiftAsyncAwait** is written on top of GCD. 
-The data below was collected by running performance for Swift on an MacBook Pro. But we have no idea if tests like these 
-are relevant :-D. We tried build this library on top of `Operation` (which is also on top of
-GCD) but that was so slow.
+The data below was collected by running performance for Swift on an MacBook Pro. 
+We tried build this library on top of `Operation` (which is also on top of GCD) but that was so slow.
 
 - Average time in seconds needed to create a resolve one task on a serial queue (measured with 10,000 tries): 
 
