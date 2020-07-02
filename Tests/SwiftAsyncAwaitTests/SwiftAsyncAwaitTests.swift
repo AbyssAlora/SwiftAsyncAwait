@@ -108,7 +108,9 @@ final class SwiftAsyncAwaitTests: XCTestCase {
     }
 
     func testAwaitPending() {
-        let o1 = Async(state: .pending) { self.soLongFn(val: 20) }
+        let queue = DispatchQueue(label: #function, qos: .userInitiated)
+
+        let o1 = Async(on: queue, state: .pending) { self.soLongFn(val: 20) }
         o1.start()
         try! await { o1 }
 

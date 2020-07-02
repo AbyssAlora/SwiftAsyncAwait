@@ -303,12 +303,13 @@ let value = try! await { customQueueAsyncTask() }
 
 ### Change DispatchQueue
 
-If you want to change default `DispatchQueue` for running tasks (default: `DispatchQueue.global(.background)`), you can set:
+If you want to change default `DispatchQueue` for running tasks you can set:
 
 ```swift
-DispatchQueue.task = YourNewDefaultDispatchQueue
+DispatchQueue.task = DispatchQueue(label: "MyDispatchQueue", qos: .userInitiated, attributes: .concurrent)
 ```
-We don't think that main queue is good for asyncDefault because this is Async library.
+
+`DispatchQueue.task` should be concurrent.
 
 ### Promises
 

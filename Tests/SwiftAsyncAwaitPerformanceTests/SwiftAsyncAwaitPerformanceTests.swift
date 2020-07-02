@@ -372,6 +372,11 @@ final class SwiftAsyncAwaitPerformanceTests: XCTestCase {
         ("testDoubleAsyncAwaitOnSerialQueue", testDoubleAsyncAwaitOnSerialQueue),
         ("testTripleAsyncAwaitOnSerialQueue", testTripleAsyncAwaitOnSerialQueue),
         ("testAsyncAwaitOnConcurrentQueue", testAsyncAwaitOnConcurrentQueue),
-        ("testTripleAwaitAsyncAwaitOnSerialQueue", testTripleAwaitAsyncAwaitOnSerialQueue)
+        ("testTripleAwaitAsyncAwaitOnSerialQueue", testTripleAwaitAsyncAwaitOnSerialQueue),
+
+        ("testPromiseOnSerialQueue", testPromiseOnSerialQueue),
+        ("testDoubleThenOnSerialQueue", testDoubleThenOnSerialQueue),
+        ("testTripleThenOnSerialQueue", testTripleThenOnSerialQueue),
+        ("testPromisesOnConcurrentQueue", testPromisesOnConcurrentQueue),
     ]
 }

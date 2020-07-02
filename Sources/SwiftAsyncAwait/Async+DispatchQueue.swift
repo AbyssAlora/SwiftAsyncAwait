@@ -5,7 +5,7 @@
 import Foundation
 
 class AsyncTaskDispatchQueue {
-    var queue: DispatchQueue = .global(qos: .background)
+    var queue: DispatchQueue = DispatchQueue.global(qos: .userInitiated)
     static let `default` = AsyncTaskDispatchQueue()
 }
 
