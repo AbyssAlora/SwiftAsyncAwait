@@ -4,12 +4,12 @@
 
 import Foundation
 
-class AsyncTaskDispatchQueue {
+public class AsyncTaskDispatchQueue {
     var queue: DispatchQueue = DispatchQueue.global(qos: .userInitiated)
     static let `default` = AsyncTaskDispatchQueue()
 }
 
-extension DispatchQueue {
+public extension DispatchQueue {
     static var task: DispatchQueue {
         get {
             AsyncTaskDispatchQueue.default.queue

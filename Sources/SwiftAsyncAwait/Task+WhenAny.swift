@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Task {
+public extension Task {
     final class WhenAny: Async<Task>, TaskDelegate {
 
         /**
@@ -33,7 +33,7 @@ extension Task {
             }
         }
 
-        func finishedWith(_ result: Task?) {
+        public func finishedWith(_ result: Task?) {
             // when some task is finished set the result as first finished task or set the error
             if let error = result?.error {
                 self.error = error

@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Promise {
+public extension Promise {
     func finally(_ callback: @escaping ()->()) -> Promise<Void> {
         provide(
                 Promise<Void>(

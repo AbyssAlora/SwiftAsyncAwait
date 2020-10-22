@@ -5,12 +5,12 @@
 import Foundation
 
 @discardableResult
-func await<T>(_ task: () -> Async<T>) throws -> T? {
+public func await<T>(_ task: () -> Async<T>) throws -> T? {
     try task().await()
 }
 
 @discardableResult
-func await<T>(timeout: DispatchTimeInterval, _ task: () -> Async<T>) throws -> T? {
+public func await<T>(timeout: DispatchTimeInterval, _ task: () -> Async<T>) throws -> T? {
     try task().await(timeout: timeout)
 }
 

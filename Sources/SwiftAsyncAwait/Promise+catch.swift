@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Promise {
+public extension Promise {
     func `catch`(_ callback: @escaping (Error)->()) -> Promise<Void> {
         provide(
                 Promise<Void>(

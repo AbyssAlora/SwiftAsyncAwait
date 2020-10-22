@@ -4,6 +4,6 @@
 
 import Foundation
 
-protocol TaskDelegate: NSObjectProtocol {
+public protocol TaskDelegate: NSObjectProtocol {
     func finishedWith(_ result: Task?)
 }

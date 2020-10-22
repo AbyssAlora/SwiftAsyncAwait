@@ -4,7 +4,7 @@
 
 import Foundation
 
-class Async<Result>: Task {
+public class Async<Result>: Task {
 
     private var  f: (() throws -> (Result))?
     private var _f: ((Async<Result>) throws -> ())?

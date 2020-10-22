@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum TaskState: Int {
+public enum TaskState: Int {
     case running, finished, pending, finishedWithError, retry
 
     var didFinish: Bool {

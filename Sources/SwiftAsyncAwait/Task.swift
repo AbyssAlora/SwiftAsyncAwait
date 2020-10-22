@@ -4,7 +4,7 @@
 
 import Foundation
 
-class Task: NSObject {
+public class Task: NSObject {
     private var pendingTask: Task? // Create retain cycle, because we want to keep Task alive until result is resolved
 
     var dispatchQueue: DispatchQueue = DispatchQueue.task // the main function will be executed on this queue

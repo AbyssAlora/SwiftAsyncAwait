@@ -1,6 +1,6 @@
 import Foundation
 
-extension Task {
+public extension Task {
     final class WhenAll: Async<(Task, [Task])>, TaskDelegate {
         private var tasks: [Task] = []
 
@@ -36,7 +36,7 @@ extension Task {
             }
         }
 
-        func finishedWith(_ result: Task?) {
+        public func finishedWith(_ result: Task?) {
             self.result = (result, self.tasks)
         }
 
