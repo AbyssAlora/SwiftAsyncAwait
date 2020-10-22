@@ -4,14 +4,14 @@ public extension Task {
     final class WhenAll: Async<(Task, [Task])>, TaskDelegate {
         private var tasks: [Task] = []
 
-        override func await() throws -> (Task, [Task])? {
+        override public func await() throws -> (Task, [Task])? {
             for task in self.tasks {
                 try task.wait()
             }
             return self.result as? (Task, [Task])
         }
 
-        override func await(timeout: DispatchTimeInterval) throws -> (Task, [Task])? {
+        override public func await(timeout: DispatchTimeInterval) throws -> (Task, [Task])? {
             for task in self.tasks {
                 try task.wait(timeout: timeout)
             }

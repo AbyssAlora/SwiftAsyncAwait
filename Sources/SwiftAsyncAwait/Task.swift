@@ -17,7 +17,7 @@ public class Task: NSObject {
     /**
          Delegate for notification when task.state was changed to `.finished` or `.finishedWithError`
      */
-    weak var delegate: TaskDelegate? {
+    public weak var delegate: TaskDelegate? {
         didSet {
             if self.state.didFinish { self.delegate?.finishedWith(self) }
         }
@@ -26,7 +26,7 @@ public class Task: NSObject {
     /**
          some Error if task finished with error
      */
-    var error: Error? {
+    public var error: Error? {
         didSet {
             if self.attempts > 0 { // retry
                 self.state = .retry
@@ -48,7 +48,7 @@ public class Task: NSObject {
     /**
          Result of the task
      */
-    var result: Any? {
+    public var result: Any? {
         get {
             self._result
         }
@@ -72,7 +72,7 @@ public class Task: NSObject {
          - Returns: result as Any?.
      */
     @discardableResult
-    final func wait() throws -> Any? {
+    final public func wait() throws -> Any? {
         if !self.state.isRunning {
             if let error = self.error {
                 throw error
@@ -99,7 +99,7 @@ public class Task: NSObject {
          - Returns: result as Any?.
      */
     @discardableResult
-    final func wait(timeout: DispatchTimeInterval) throws -> Any? {
+    final public func wait(timeout: DispatchTimeInterval) throws -> Any? {
         if !self.state.isRunning {
             if let error = self.error {
                 throw error
@@ -122,7 +122,7 @@ public class Task: NSObject {
             - *delay*: Defines time for delaying execution of the main function
             - *attempts*: If main function throws error the Task will retry execution of the main function until attempts reach 0
      */
-    init(
+    public init(
             on dispatchQueue: DispatchQueue? = nil,
             delay: DispatchTimeInterval? = nil,
             attempts: Int = 0
@@ -159,7 +159,7 @@ public class Task: NSObject {
     /**
          If can start, this func fire the async body trough execute() in defined thread
      */
-    final func start() {
+    final public func start() {
         if !self.state.canStart { return }
         self.state = .running
         if let delay = self.delay {

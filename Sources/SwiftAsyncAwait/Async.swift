@@ -9,25 +9,25 @@ public class Async<Result>: Task {
     private var  f: (() throws -> (Result))?
     private var _f: ((Async<Result>) throws -> ())?
 
-    var returnValue: Result? {
+    public var returnValue: Result? {
         self.result as? Result
     }
 
     @discardableResult
-    func await() throws -> Result? {
+    public func await() throws -> Result? {
         try self.wait() as? Result
     }
 
     @discardableResult
-    func await(timeout: DispatchTimeInterval) throws -> Result? {
+    public func await(timeout: DispatchTimeInterval) throws -> Result? {
         try self.wait(timeout: timeout) as? Result
     }
 
-    init() {
+    public init() {
         super.init()
     }
 
-    init(
+    public init(
             on dispatchQueue: DispatchQueue? = nil,
             delay: DispatchTimeInterval? = nil,
             attempts: Int = 0,
@@ -41,7 +41,7 @@ public class Async<Result>: Task {
         }
     }
 
-    init(
+    public init(
             on dispatchQueue: DispatchQueue? = nil,
             delay: DispatchTimeInterval? = nil,
             attempts: Int = 0,
