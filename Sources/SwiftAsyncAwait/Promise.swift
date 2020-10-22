@@ -25,7 +25,7 @@ public class Promise<Result>: Async<Result> {
         super.init()
     }
 
-    init(
+    public init(
             on dispatchQueue: DispatchQueue? = nil,
             delay: DispatchTimeInterval? = nil,
             attempts: Int = 0,
@@ -33,7 +33,7 @@ public class Promise<Result>: Async<Result> {
         super.init(on: dispatchQueue, delay: delay, attempts: attempts, state: .pending, f)
     }
 
-    init(
+    public init(
             on dispatchQueue: DispatchQueue? = nil,
             delay: DispatchTimeInterval? = nil,
             attempts: Int = 0,
