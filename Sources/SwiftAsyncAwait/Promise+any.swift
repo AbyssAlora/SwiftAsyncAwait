@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Promise {
+public extension Promise {
     func thenAny(_ tasks: Task...) -> Promise<Task> {
         provide(
                 Promise<Task> {
@@ -17,7 +17,7 @@ extension Promise {
     }
 }
 
-func any(_ tasks: Task...) -> Promise<Task> {
+public func any(_ tasks: Task...) -> Promise<Task> {
     Promise<Task> {
         task in
         for task in tasks { task.start() }

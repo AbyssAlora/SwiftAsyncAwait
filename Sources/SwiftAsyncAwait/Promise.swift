@@ -5,7 +5,7 @@
 import Foundation
 
 
-class Promise<Result>: Async<Result> {
+public class Promise<Result>: Async<Result> {
 
     private override init(
             on dispatchQueue: DispatchQueue? = nil,

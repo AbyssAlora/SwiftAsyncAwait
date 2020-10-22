@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Task {
+public extension Task {
     @discardableResult
     static func WaitAny(_ tasks: Task...) throws -> Task? {
         try await { Task.WhenAny(tasks) }

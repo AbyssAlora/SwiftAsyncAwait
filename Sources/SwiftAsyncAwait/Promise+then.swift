@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Promise {
+public extension Promise {
 
     func then<U>(
             on dispatchQueue: DispatchQueue? = nil,
